@@ -1,0 +1,24 @@
+<div class="row container">
+  <div class="col-9">
+    <p>Idea with ID {{ ideaID }} is {{ ideaStatus }}</p>
+  </div>
+  <div class="col-3">
+    <app-idea-detail></app-idea-detail>
+  </div>
+  <div class="col-6" style="background-color: beige; padding: 2px;">
+    <label>Please enter your idea:</label>
+    <input
+      type="text"
+      class="form-control"
+      (input)="onUpdateIdea($event)">
+    <button
+      type="button"
+      class="btn btn-primary"
+      [disabled]="!allowNewIdea"
+      (click)="onIdeaSubmitted()">Submit Idea</button>
+  </div>
+  <div class="col-6">
+    <p [innerText]="ideaSubmissionStatus"></p>
+  </div>
+</div>
+
